@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM nginx:1.11
 
 RUN apt-get update
 RUN apt-get -y install curl
@@ -8,4 +8,4 @@ RUN apt-get update
 RUN apt-get -y install gcsfuse
 RUN mkdir -p /var/fuse
 
-ENTRYPOINT ["tail" "-f" "/dev/null"]
+CMD ["nginx", "-g", "daemon off;"]
