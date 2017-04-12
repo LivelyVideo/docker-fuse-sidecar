@@ -6,6 +6,6 @@ RUN echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | tee /e
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 RUN apt-get update
 RUN apt-get -y install gcsfuse
-RUN mkdir -p /var/fuse
+RUN rm -rf /usr/share/nginx/html && mkdir -p /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
